@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S&S Moto Parts - Peças e Acessórios para Motos em Campinas</title>
+    <meta name="description" content="S&S Moto Parts: peças originais, paralelas e acessórios para motos. Capacetes, pneus, kits de transmissão e muito mais. Campinas - SP.">
+    <style>
+        /* Reset e variáveis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #d32f2f;
+            --primary-dark: #b71c1c;
+            --secondary: #212121;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --gray: #757575;
+            --border: #e0e0e0;
+            --success: #2e7d32;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--light);
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--secondary);
+            color: var(--white);
+            font-size: 0.85rem;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .top-bar a:hover {
+            color: var(--primary);
+        }
+
+        .top-bar .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo h1 span {
+            color: var(--secondary);
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid var(--border);
+            border-right: none;
+            border-radius: var(--radius) 0 0 var(--radius);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary);
+        }
+
+        .search-bar button {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .header-actions .btn-whatsapp {
+            background-color: #25d366;
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .header-actions .btn-whatsapp:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Nav */
+        nav {
+            background-color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        nav ul li a {
+            display: block;
+            color: var(--white);
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: var(--white);
+            padding: 70px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(211,47,47,0.15) 0%, transparent 70%);
+            animation: pulse 8s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #ccc;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .btn-hero {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: var(--radius);
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--primary);
+        }
+
+        .hero .btn-hero:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        /* Categorias */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .categorias {
+            padding: 60px 0;
+        }
+
+        .grid-categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .categoria-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .categoria-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+
+        .categoria-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .categoria-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--secondary);
+        }
+
+        .categoria-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Produtos em destaque */
+        .produtos {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .grid-produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .produto-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .produto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .produto-img {
+            height: 180px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #bbb;
+            position: relative;
+        }
+
+        .produto-img .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .produto-info {
+            padding: 15px;
+        }
+
+        .produto-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--secondary);
+            min-height: 40px;
+        }
+
+        .produto-info .preco {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .produto-info .preco-antigo {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-decoration: line-through;
+            margin-bottom: 10px;
+        }
+
+        .produto-info .btn-comprar {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: var(--radius);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .produto-info .btn-comprar:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Sobre */
+        .sobre {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .sobre-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .sobre-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .sobre-text ul {
+            margin: 20px 0;
+        }
+
+        .sobre-text ul li {
+            padding: 5px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sobre-text ul li::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .sobre-info {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .sobre-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .sobre-info .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.9rem;
+        }
+
+        .sobre-info .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .sobre-info .info-item .label {
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .sobre-info .info-item .value {
+            color: var(--secondary);
+            text-align: right;
+            max-width: 60%;
+        }
+
+        /* Contato */
+        .contato {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .grid-contato {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .contato-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.3s;
+        }
+
+        .contato-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contato-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contato-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .contato-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .contato-card a {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .contato-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: #ccc;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .footer-bottom .cnpj {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: var(--white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+            z-index: 999;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.6);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-bar {
+                margin: 0;
+                max-width: 100%;
+                order: 3;
+            }
+
+            .header-actions {
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+
+            nav ul li a {
+                white-space: nowrap;
+                padding: 12px 15px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero .btn-hero {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .grid-produtos {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .produto-img {
+                height: 120px;
+            }
+
+            .produto-info h4 {
+                font-size: 0.8rem;
+                min-height: auto;
+            }
+
+            .produto-info .preco {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span>📞 (19) 3266-3731</span>
+                <span>✉️ spdmoto@gmail.com</span>
+            </div>
+            <div>
+                <span>📍 Campinas - SP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-main">
+            <div class="logo">
+                <h1>S&S <span>Moto Parts</span></h1>
+                <p>Peças e Acessórios para Motos</p>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar peças, capacetes, pneus...">
+                <button type="button">🔍</button>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://wa.me/5519974167742" class="btn-whatsapp" target="_blank" rel="noopener">
+                    💬 WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categorias">Categorias</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Encontre as <span>melhores peças</span> para sua moto</h2>
+            <p>Capacetes, pneus, kits de transmissão, peças para motores originais e paralelas. Tudo em um só lugar.</p>
+            <a href="#produtos" class="btn-hero">Ver Produtos</a>
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section class="categorias" id="categorias">
+        <div class="container">
+            <h2 class="section-title">Categorias</h2>
+            <p class="section-subtitle">Navegue pelas principais categorias de produtos</p>
+
+            <div class="grid-categorias">
+                <div class="categoria-card">
+                    <div class="icon">🪖</div>
+                    <h3>Capacetes</h3>
+                    <p>Diversos modelos e tamanhos</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">🛞</div>
+                    <h3>Pneus</h3>
+                    <p>Para todas as motos</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Kits de Transmissão</h3>
+                    <p>Coroa, pinhão e corrente</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">🔧</div>
+                    <h3>Peças para Motor</h3>
+                    <p>Originais e paralelas</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">🛢️</div>
+                    <h3>Óleos e Lubrificantes</h3>
+                    <p>Para o bom funcionamento</p>
+                </div>
+                <div class="categoria-card">
+                    <div class="icon">🔩</div>
+                    <h3>Acessórios</h3>
+                    <p>Diversos itens para sua moto</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos em Destaque -->
+    <section class="produtos" id="produtos">
+        <div class="container">
+            <h2 class="section-title">Produtos em Destaque</h2>
+            <p class="section-subtitle">Confira alguns dos nossos produtos mais vendidos</p>
+
+            <div class="grid-produtos">
+                <div class="produto-card">
+                    <div class="produto-img">
+                        🪖
+                        <span class="badge">Oferta</span>
+                    </div>
+                    <div class="produto-info">
+                        <h4>Capacete Integral Pro Tork</h4>
+                        <div class="preco-antigo">R$ 299,90</div>
+                        <div class="preco">R$ 249,90</div>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-img">
+                        🛞
+                        <span class="badge">Novo</span>
+                    </div>
+                    <div class="produto-info">
+                        <h4>Pneu Traseiro 90/90-18</h4>
+                        <div class="preco">R$ 189,90</div>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-img">
+                        ⚙️
+                    </div>
+                    <div class="produto-info">
+                        <h4>Kit Transmissão CG 160</h4>
+                        <div class="preco-antigo">R$ 159,90</div>
+                        <div class="preco">R$ 129,90</div>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="produto-card">
+                    <div class="produto-img">
+                        🔧
+                    </div>
+                    <div class="produto-info">
+                        <h4>Kit Pistão e Anéis Original</h4>
+                        <div class="preco">R$ 279,90</div>
+                        <button class="btn-comprar">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <h2>Sobre a S&S Moto Parts</h2>
+                    <p>Desde 2009, a <strong>S&S Moto Parts</strong> oferece peças e acessórios de qualidade para motociclistas de Campinas e região.</p>
+                    <p>Trabalhamos com uma grande variedade de produtos, como capacetes, pneus, kits de transmissão e peças para motores originais e paralelas.</p>
+                    <ul>
+                        <li>Peças originais e paralelas</li>
+                        <li>Grande variedade de produtos</li>
+                        <li>Atendimento especializado</li>
+                        <li>Entrega para toda a região</li>
+                    </ul>
+                </div>
+
+                <div class="sobre-info">
+                    <h3>Informações da Empresa</h3>
+                    <div class="info-item">
+                        <span class="label">Razão Social</span>
+                        <span class="value">S & S Motopecas LTDA</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Nome Fantasia</span>
+                        <span class="value">S & S Motopecas</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">CNPJ</span>
+                        <span class="value">11.424.251/0001-10</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Inscrição Estadual</span>
+                        <span class="value">795.027.770.115</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Abertura</span>
+                        <span class="value">03/12/2009</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">CNAE Principal</span>
+                        <span class="value">45.41-2-06</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Endereço</span>
+                        <span class="value">Rua Rachel Grimaldi Benites de Cara, 17 - Anexo Térreo Sala 2</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Bairro</span>
+                        <span class="value">Recanto do Sol II</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">CEP</span>
+                        <span class="value">13056-631</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Município/UF</span>
+                        <span class="value">Campinas - SP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="contato" id="contato">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p class="section-subtitle">Tire suas dúvidas ou faça seu pedido</p>
+
+            <div class="grid-contato">
+                <div class="contato-card">
+                    <div class="icon">📞</div>
+                    <h3>Telefone</h3>
+                    <p>Atendimento durante o horário comercial</p>
+                    <a href="tel:+551932663731">(19) 3266-3731</a>
+                </div>
+
+                <div class="contato-card">
+                    <div class="icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Faça seu pedido pelo WhatsApp</p>
+                    <a href="https://wa.me/5519974167742" target="_blank" rel="noopener">(19) 97416-7742</a>
+                </div>
+
+                <div class="contato-card">
+                    <div class="icon">✉️</div>
+                    <h3>E-mail</h3>
+                    <p>Envie sua solicitação por e-mail</p>
+                    <a href="mailto:spdmoto@gmail.com">spdmoto@gmail.com</a>
+                </div>
+
+                <div class="contato-card">
+                    <div class="icon">📍</div>
+                    <h3>Endereço</h3>
+                    <p>Rua Rachel Grimaldi Benites de Cara, 17<br>Anexo Térreo - Sala 2<br>Recanto do Sol II - Campinas/SP<br>CEP: 13056-631</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>S&S Moto Parts</h4>
+                    <p>Peças originais, paralelas e acessórios para motos. Qualidade e confiança desde 2009.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categorias">Categorias</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>📞 (19) 3266-3731</p>
+                    <p>💬 (19) 97416-7742</p>
+                    <p>✉️ spdmoto@gmail.com</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Endereço</h4>
+                    <p>Rua Rachel Grimaldi Benites de Cara, 17<br>
+                    Anexo Térreo - Sala 2<br>
+                    Recanto do Sol II<br>
+                    Campinas - SP<br>
+                    CEP: 13056-631</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 S&S Moto Parts - Todos os direitos reservados.</p>
+                <p class="cnpj">CNPJ: 11.424.251/0001-10 | Inscrição Estadual SP: 795.027.770.115</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5519974167742" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
